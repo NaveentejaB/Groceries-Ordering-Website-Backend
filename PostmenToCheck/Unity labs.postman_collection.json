@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "5a7d8972-38a9-41b5-b475-bfe3f8aa7f62",
+		"name": "Unity labs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28159871"
+	},
+	"item": [
+		{
+			"name": "buyer",
+			"item": [
+				{
+					"name": "list-of-sellers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1Nzc2YmViYTE2OWJkMjg2MzcyYjg0ZSIsInJvbGUiOiJidXllciIsImlhdCI6MTcwMjMyNTIzMCwiZXhwIjoxNzAyMzI3MDMwfQ.vzNk09BEXZClCZylofBvMTC3bYd3An-IEeyCt55QwIs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/buyer/list-of-sellers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buyer",
+								"list-of-sellers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get calatog of items",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1Nzc2YmViYTE2OWJkMjg2MzcyYjg0ZSIsInJvbGUiOiJidXllciIsImlhdCI6MTcwMjMyNTIzMCwiZXhwIjoxNzAyMzI3MDMwfQ.vzNk09BEXZClCZylofBvMTC3bYd3An-IEeyCt55QwIs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/buyer/seller-catalog/:seller_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buyer",
+								"seller-catalog",
+								":seller_id"
+							],
+							"variable": [
+								{
+									"key": "seller_id",
+									"value": "794c0dc2-35ea-4b84-92da-4072252a2c0f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place the order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1Nzc2YmViYTE2OWJkMjg2MzcyYjg0ZSIsInJvbGUiOiJidXllciIsImlhdCI6MTcwMjMyNTIzMCwiZXhwIjoxNzAyMzI3MDMwfQ.vzNk09BEXZClCZylofBvMTC3bYd3An-IEeyCt55QwIs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orders\" : [\r\n        \"sapotaa\",\r\n        \"apple\",\r\n        \"orange\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/buyer/create-order/:seller_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buyer",
+								"create-order",
+								":seller_id"
+							],
+							"variable": [
+								{
+									"key": "seller_id",
+									"value": "794c0dc2-35ea-4b84-92da-4072252a2c0f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "seller",
+			"item": [
+				{
+					"name": "create-catalog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1Nzc2OTYwNTY3N2U5NWYxYzQ2ODE1OCIsInJvbGUiOiJzZWxsZXIiLCJpYXQiOjE3MDIzMjQ1ODgsImV4cCI6MTcwMjMyNjM4OH0.Bhs176b_b9nPSfD8LvWgmLBRneS3mxSQvhAbY-UEtyk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\" : [{\r\n        \"productName\":\"kiwi\",\r\n        \"productPrice\": 40\r\n    },\r\n    {\r\n        \"productName\":\"graphes\",\r\n        \"productPrice\": 50 \r\n    }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/seller/create-catalog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"seller",
+								"create-catalog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1Nzc2NTYwOTc2YWUwYTMxOWQ2YzY5MCIsInJvbGUiOiJzZWxsZXIiLCJpYXQiOjE3MDIzMjM1NTUsImV4cCI6MTcwMjMyNTM1NX0.dIEOWlIIYes-y6uWlyz8qk0eVUPSePwKri3W-KPmH6w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/seller/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"seller",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "naveen",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "naveen",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "buyer",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "seller",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "naveen",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "naveen",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "buyer",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "seller",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
