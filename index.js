@@ -51,7 +51,7 @@ const authUserRoutes = require("./views/authUserRoutes")
 const sellerRoutes = require("./views/sellerRoutes")
 const buyerRoutes = require("./views/buyerRoutes")
 
-app.use("/",authUserRoutes)
+app.use("/api/auth",authUserRoutes)
 app.use("/api/seller",sellerRoutes)
 app.use("/api/buyer",buyerRoutes)
 
